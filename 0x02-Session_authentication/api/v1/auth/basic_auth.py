@@ -13,7 +13,8 @@ from models.user import User
 class BasicAuth(Auth):
     """Basic authentication class."""
 
-    def extract_base64_authorization_header(self, authorization_header: str) -> str:
+    def extract_base64_authorization_header(self,
+                                            authorization_header: str) -> str:
         """Extracts the Base64 part of the Authorization header
         for a Basic Authentication.
         """
@@ -58,7 +59,8 @@ class BasicAuth(Auth):
                 return user, password
         return None, None
 
-    def user_object_from_credentials(self, user_email: str, user_pwd: str) -> TypeVar(
+    def user_object_from_credentials(self, user_email: str,
+                                     user_pwd: str) -> TypeVar(
         "User"
     ):
         """Retrieves a user based on the user's authentication credentials."""
